@@ -69,7 +69,10 @@ while ($row = $result->fetch_assoc()) {
         <div class="separate">
         <form action="delete.php" method="post">
             <input type="hidden" name="idKons" value="<?php echo $id; ?>"> 
-            <input type="submit" value="Usuń Konsultanta">            
+            <?php
+            require("isAdmin.php");
+            if($isAdmin) { echo "<input type='submit' value='Usuń Konsultanta'>"; }
+            ?>        
         </form>
 
         <h3>Dodaj recenzję:</h3>
