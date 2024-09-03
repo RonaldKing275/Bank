@@ -63,6 +63,7 @@ $result = $stmt->get_result();
 while ($row = $result->fetch_assoc()) { 
     echo "{$row['Imie']} {$row['Nazwisko']}<br>";
     echo "<img src='Obrazki/{$row['Zdjecie']}' class='konsulImg2' id='kons'>";
+    echo "<br>Telefon: 123 321 231";
 }
 ?>
         <div class="separate">

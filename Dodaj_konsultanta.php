@@ -8,13 +8,12 @@
     <meta charset="UTF-8">
     <title>Strona bankowa</title>
     <link rel="stylesheet" href="Styles/styl.css">
-
 </head>
 <body>
-<header>
+    <header>
         KOSMOBANK
     </header>
-<nav>
+    <nav>
     <div style="grid-area:zero;">
             <a href="index.php"> Główna</a> 
         </div>
@@ -41,31 +40,12 @@
         </div>
     </nav>
     <section>
-        <table>
-        <tr>
-            <th>Id klienta</th>
-            <th>Od kogo</th>
-            <th>Kwota</th>
-            <th>Saldo</th>
-            <th>Komentarz</th>
-        </tr>
-        <?php
-        $x = $_SESSION["login"];
-        $sql = "SELECT id FROM uzytkownicy WHERE Login = '$x';";
-        $result1 = $conn -> query($sql);
-        while($row = $result1 -> fetch_object())
-            {
-            $y = $row->id;
-            }
-        $sql2 = "SELECT * FROM operacje WHERE Id_klienta = $y";
-        $result = $conn->query($sql2);
-        while($row = $result -> fetch_object())
-            {
-                echo "<tr><td>{$row-> Id_klienta} </td> <td>{$row-> Od_kogo} </td> <td>{$row->Kwota} </td> <td>{$row-> Saldo} </td> <td>{$row-> Komentarz} </td></tr>";
-            }
-        $conn->close();
-        ?>
-        </table>
+    <form action="add.php" method="post" enctype="multipart/form-data">
+        Imie: <input type="text" name="imie"><br>
+        Nazwisko: <input type="text" name="nazwisko"><br>
+        Zdjęcie: <input type="file" id="obrazek" name="obrazek" required> <br>
+        <input type="submit" value="Dodaj"><br> 
+    </form>
     </section>
     <footer>
         Stronę wykonał: <i>Andrzej Stefaniuk i Rafał Szymorowski </i>

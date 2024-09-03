@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="Styles/styl.css">
 </head>
 <body>
-
+<header>
+        KOSMOBANK
+    </header>
 <nav>
     <div style="grid-area:zero;">
             <a href="index.php"> Główna</a> 
@@ -38,24 +40,19 @@
         </div>
     </nav>
     <section>
-        <div style="float:left;">
+        <div>
         <form method="get">
         Wyszukaj: <input type="text" name="fraza"><br>
         <input type="submit" value="Szukaj"><br>
     </form>
-    <form action="add.php" method="post" enctype="multipart/form-data">
-        Imie: <input type="text" name="imie"><br>
-        Nazwisko: <input type="text" name="nazwisko"><br>
-        Zdjęcie: <input type="file" id="obrazek" name="obrazek" required> <br>
-        <input type="submit" value="Dodaj"><br> 
-    </form>
+    <a href="Dodaj_konsultanta.php"> <button> Dodaj</button></a>
 </div>
-<div style="float:right; padding-right:300px;"> 
+<div style="text-align:center;"> 
         Nasi konsultanci: <br>
          <?php 
           require ("db.php");
 
-          $sql = "SELECT * FROM konsultanci";
+          $sql = "SELECT * FROM konsultanci;";
          
           if (isset($_GET["fraza"])) {
             $fraza = $_GET["fraza"];
@@ -65,10 +62,10 @@
           if ($result->num_rows > 0) {
             echo "<table>";
             while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td><img src='Obrazki/{$row['Zdjecie']}' class='konsulImg'></td>";
-                echo "<td><a href='details.php?id={$row['Id']}'>{$row['Imie']} {$row['Nazwisko']} </a></td>";
-                echo "</tr>";
+                echo "<div>";
+                echo "<img src='Obrazki/{$row['Zdjecie']}' class='konsulImg'>";
+                echo "<a href='details.php?id={$row['Id']}'>{$row['Imie']} {$row['Nazwisko']} </a>";
+                echo "</div>";
             }
             echo "</table>";
         } else {

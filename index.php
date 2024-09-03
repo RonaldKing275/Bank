@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="Styles/styl.css">
 </head>
 <body>
-
+    <header>
+        KOSMOBANK
+    </header>
     <nav>
     <div style="grid-area:zero;">
             <a href="index.php"> Główna</a> 
