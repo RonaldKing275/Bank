@@ -12,8 +12,9 @@
  $login = $_POST["login"];
  $haslo = $_POST["haslo"];
  $email = $_POST["email"];
+ $rola = "user";
 
- $sql = "INSERT INTO uzytkownicy (login, haslo, email) VALUES ('$login', '" . md5($haslo) ."', '$email')";
+ $sql = "INSERT INTO uzytkownicy (login, haslo, email, rola) VALUES ('$login', '" . md5($haslo) ."', '$email', '$rola')";
  $result = $conn->query($sql);
  if ($result) {
  echo "<div class='form'>
