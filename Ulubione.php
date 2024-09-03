@@ -50,10 +50,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<table>";
     while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td><img src='Obrazki/{$row['zdjecie']}' class='konsulImg2' id='kons'></td>";
-        echo "<td><a href='details.php?id={$row['id']}'>{$row['imie']} {$row['nazwisko']}</a></td>";
-        echo "</tr>";
+        echo "<div>";
+        echo "<img src='Obrazki/{$row['zdjecie']}' class='konsulImg2' id='kons'></td>";
+        echo "<a href='details.php?id={$row['id']}'>{$row['imie']} {$row['nazwisko']}</a></td>";
+        echo "</div>";
     }
     echo "</table>";
 } else {
