@@ -45,18 +45,24 @@
         Wyszukaj: <input type="text" name="fraza"><br>
         <input type="submit" value="Szukaj"><br>
     </form>
-    <a href="Dodaj_konsultanta.php"> <button> Dodaj</button></a>
+    <?php
+    require("isAdmin.php");    
+    if($isAdmin) {
+        echo "<a href='Dodaj_konsultanta.php'> <button> Dodaj</button></a>";
+    }
+
+    ?>
 </div>
 <div style="text-align:center;"> 
         Nasi konsultanci: <br>
          <?php 
           require ("db.php");
 
-          $sql = "SELECT * FROM konsultanci;";
+          $sql = "SELECT * FROM konsultanci";
          
           if (isset($_GET["fraza"])) {
             $fraza = $_GET["fraza"];
-            $sql .= " WHERE Imie LIKE '%$fraza%' OR Nazwisko LIKE '$fraza'";
+            $sql .= " WHERE Imie LIKE '%$fraza%' OR Nazwisko LIKE '%$fraza%'";
         } 
         $result = $conn -> query($sql);
           if ($result->num_rows > 0) {
