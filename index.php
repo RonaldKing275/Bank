@@ -48,6 +48,7 @@
 
     Twój stan konta to: 
     <?php
+    
     $Limit1 = 0;
     $Limit2 = 0;
     $x = $_SESSION["login"];
@@ -77,7 +78,6 @@
     } else {
         echo "0";
     }
-
     ?>zł
 <br><br>
     <?php
