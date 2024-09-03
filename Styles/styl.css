@@ -65,3 +65,11 @@ border-collapse: collapse;
 .konsulImg2 {
     height: 250px;
 }
+
+header
+{
+    padding-top: 10px;
+    font-size: 50px;
+    text-align: center;
+    color:rgb(101, 187, 101);
+}
