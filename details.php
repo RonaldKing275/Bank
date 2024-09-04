@@ -11,7 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
+<header>
+    KOSMOBANK
+</header>
 <nav>
     <div style="grid-area:zero;">
             <a href="index.php"> Główna</a> 
@@ -98,7 +100,7 @@ while ($row = $result->fetch_assoc()) {
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<p>Nick: " . $row["Nick"] . " - Ocena: " . $row["Ocena"] . " - Treść: " . $row["Tresc"] . " - Data: " . $row["Data"] . "</p>";
- 
+                    echo "<br>";
                 }
             } else {
                 echo "<p>Nie znaleziono żadnych recenzji.</p>";
