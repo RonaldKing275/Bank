@@ -72,6 +72,7 @@
                 echo "<img src='Obrazki/{$row['Zdjecie']}' class='konsulImg'>";
                 echo "<a href='details.php?id={$row['Id']}'>{$row['Imie']} {$row['Nazwisko']} </a>";
                 echo "</div>";
+                echo "<br>";
             }
             echo "</table>";
         } else {
@@ -79,6 +80,7 @@
         }
          ?>
 </div>
+<br>
     </section>
     <footer>
         Stronę wykonał: <i>Andrzej Stefaniuk i Rafał Szymorowski </i>
